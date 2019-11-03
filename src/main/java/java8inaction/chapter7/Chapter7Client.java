@@ -5,8 +5,7 @@ import java.util.stream.LongStream;
 public class Chapter7Client {
 
   public static void main(String[] args) {
-    // Long sum = Stream.iterate(1L, i -> i + 1).limit(8).parallel().reduce(0L, Long::sum);
-    // System.out.println(sum);
+
 
     long fastest = Long.MAX_VALUE;
 
