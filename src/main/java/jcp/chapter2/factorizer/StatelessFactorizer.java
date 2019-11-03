@@ -1,4 +1,4 @@
-package jcp.chapter2;
+package jcp.chapter2.factorizer;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -7,53 +7,22 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import net.jcip.annotations.GuardedBy;
+import net.jcip.annotations.ThreadSafe;
 
-// Only adding syncronized where ever we are directly accessing the state variables
-// Heavy use of local variables.
-// Long running process , factor(i), outside of syncronized block.
-// Synch polci is to use CachedFactorizer object intrinisic lock
-public class CachedFactorizer implements Servlet {
-  @GuardedBy("this")
-  BigInteger lastNumber;
-  @GuardedBy("this")
-  BigInteger[] lastFactors;
-  @GuardedBy("this")
-  long hits;
-  @GuardedBy("this")
-  long cacheHits;
+// 1. Stateless Servlet
+// 2. State of the servlet is only in local variables and hence confine to Executing thread only.
+// 3. Multiple threads so not interfere with each other, as local variables on each thread own
+// stack.
+// 4. To threads it seems they are accessing different instances.
 
-
-
-  public synchronized long getHits() {
-    return hits;
-  }
-
-  public synchronized double getCacheHitsRatio() {
-    return Double.valueOf(cacheHits) / Double.valueOf(hits);
-  }
+@ThreadSafe
+public class StatelessFactorizer implements Servlet {
 
   @Override
   public void service(ServletRequest req, ServletResponse resp) throws ServletException,
       IOException {
     BigInteger i = extractFromRequest(req);
-    BigInteger[] factors = null;
-    synchronized (this) {
-      ++hits;
-      if (lastNumber.equals(i)) {
-        ++cacheHits;
-        factors = lastFactors.clone();
-      }
-    }
-    if (factors == null) {
-      // long running process like factor is now outside of synchronized block
-      factors = factor(i);
-      synchronized (this) {
-        lastNumber = i;
-        lastFactors = factors;
-      }
-    }
-
+    BigInteger[] factors = factor(i);
     encodeIntoResponse(resp, factors);
 
   }
@@ -72,7 +41,6 @@ public class CachedFactorizer implements Servlet {
     // TODO Auto-generated method stub
     return null;
   }
-
 
   @Override
   public void destroy() {

@@ -1,4 +1,4 @@
-package jcp.chapter2;
+package jcp.chapter2.factorizer;
 
 import java.io.IOException;
 import java.math.BigInteger;

@@ -1,4 +1,4 @@
-package jpc.ch5.memoizer;
+package jcp.chapter5.memoizer;
 
 import java.math.BigInteger;
 
