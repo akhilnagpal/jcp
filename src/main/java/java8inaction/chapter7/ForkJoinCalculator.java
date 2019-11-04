@@ -40,6 +40,7 @@ public class ForkJoinCalculator extends RecursiveTask<Long> {
     leftTask.fork();
     ForkJoinCalculator rightTask = new ForkJoinCalculator(numbers, start + length / 2, end);
     long rightResult = rightTask.compute();
+    // Join is a blocking operation
     long leftResult = leftTask.join();
     return leftResult + rightResult;
   }
