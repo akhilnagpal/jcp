@@ -20,7 +20,7 @@ public class StaticFieldMemoryLeak {
 
     System.gc();
 
-    Thread.sleep(10000);
+    Thread.sleep(30000);
   }
 
 }
