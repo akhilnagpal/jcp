@@ -35,7 +35,7 @@ public class Chapter6Client {
 
     Map<Currency, List<Transaction>> txByCurr =
         transactions.stream().collect(groupingBy(Transaction::getCurrency));
-    // System.out.print(txByCurr);
+    System.out.print(txByCurr);
     List<Dish> dishes = Dish.getDishes();;
 
     System.out.println(Dish.getDishes().stream().count());
