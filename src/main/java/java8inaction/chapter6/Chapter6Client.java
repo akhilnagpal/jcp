@@ -39,11 +39,11 @@ public class Chapter6Client {
     List<Dish> dishes = Dish.getDishes();;
 
     System.out.println(Dish.getDishes().stream().count());
-    System.out.println(Dish.getDishes().stream().collect(counting()));
+//    System.out.println(Dish.getDishes().stream().collect(counting()));
     dishes.stream().collect(maxBy(comparingInt(Dish::getCalories))).ifPresent(System.out::println);;
     dishes.stream().collect(minBy(comparingInt(Dish::getCalories))).ifPresent(System.out::println);;;
-    System.out.println(dishes.stream().collect(summingInt(Dish::getCalories)));
-    System.out.println(dishes.stream().collect(averagingInt(Dish::getCalories)));
+//    System.out.println(dishes.stream().collect(summingInt(Dish::getCalories)));
+//    System.out.println(dishes.stream().collect(averagingInt(Dish::getCalories)));
     IntSummaryStatistics statistics = dishes.stream().collect(summarizingInt(Dish::getCalories));
     System.out.println(statistics);
     System.out.println(dishes.stream().map(Dish::getName).collect(joining(",")));
