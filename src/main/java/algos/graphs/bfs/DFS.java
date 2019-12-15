@@ -7,14 +7,14 @@ import java.util.LinkedList;
 // https://hackernoon.com/graphs-in-cs-and-its-traversal-algorithms-cfee5533f74e
 // https://stackabuse.com/graphs-in-java-breadth-first-search-bfs/
 // Below algorithm just checks if the two nodes are connected in a directed acyclic graph
-// It uses helper queue additionally and ensures nodes are not visited twice.
+// It uses principle of recursion and ensures nodes are not visited twice.
 
-public class BFS {
+public class DFS {
   // Directed Graph is a function of pair of sets holding numberOfVertices and directed edges
   private int numberOfVertices;
   private LinkedList<Integer>[] adjustancyList;
 
-  public BFS(int numberOfVertices) {
+  public DFS(int numberOfVertices) {
     this.numberOfVertices = numberOfVertices;
     adjustancyList = new LinkedList[numberOfVertices];
     for (int i = 0; i < numberOfVertices; i++) {
@@ -30,39 +30,29 @@ public class BFS {
     // We need to ensure vertices are not visited twice
     // Mark all the vertices as not visited(By default set as false)
     boolean[] visited = new boolean[numberOfVertices];
-    // Create a queue for BFS - FIFO - to resume searching down after all immediate neighbours are
-    // visited.
-    LinkedList<Integer> bfsQueue = new LinkedList<>();
-
     visited[sourceVertice] = true;
-    bfsQueue.add(sourceVertice);
 
-    Iterator<Integer> adjustancyListIterator;
-    while (!bfsQueue.isEmpty()) {
-      int node = bfsQueue.poll();
-      adjustancyListIterator = adjustancyList[node].iterator();
-      while (adjustancyListIterator.hasNext()) {
-        int neighbourNode = adjustancyListIterator.next();
-        if (destinationVertice == neighbourNode) {
+    Iterator<Integer> adjustancyListIterator = adjustancyList[sourceVertice].iterator();
+    while (adjustancyListIterator.hasNext()) {
+      int destinationNode = adjustancyListIterator.next();
+      if (destinationNode == destinationVertice) {
+        return true;
+      }
+      if (!visited[destinationNode]) {
+        // Only recurse if node not all already visited
+        boolean checkNode = isReachable(sourceVertice, destinationNode);
+        if (checkNode) {
           return true;
         }
-        // Below step is important as we do not want re-visit the last Node again.
-        // This could lead to infinite loop
-        if (!visited[neighbourNode]) {
-          visited[neighbourNode] = true;
-          bfsQueue.add(neighbourNode);
-        }
-
       }
     }
-
     return false;
   }
 
   public static void main(String[] args) {
     // Create a graph given in the above diagram
     // Use paper pencil to visualize
-    BFS bfsGraph = new BFS(4);
+    DFS bfsGraph = new DFS(4);
     bfsGraph.addEdge(0, 1);
     bfsGraph.addEdge(0, 2);
     bfsGraph.addEdge(1, 2);
