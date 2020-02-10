@@ -1,6 +1,5 @@
 package concurrency.executorservice;
 
-import java.util.HashMap;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
@@ -15,9 +14,6 @@ import concurrency.blockingqueue.Producer;
 public class ExecutorServiceExample {
 	
 	public static void main(String args[]) {
-		
-		HashMap map;
-
 		ExecutorService executorService = Executors.newFixedThreadPool(2);
 //		ExecutorService executorService = Executors.newScheduledThreadPool(2);
 //		ExecutorService executorService = Executors.newSingleThreadExecutor();

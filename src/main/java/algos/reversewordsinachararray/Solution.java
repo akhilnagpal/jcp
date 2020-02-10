@@ -1,5 +1,4 @@
 package algos.reversewordsinachararray;
-import java.util.Scanner;
 
 public class Solution {
 
