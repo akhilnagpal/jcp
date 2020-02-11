@@ -13,6 +13,7 @@ import com.mongodb.client.model.Updates;
 
 public class ConnectToDB {
 	
+	@SuppressWarnings("resource")
 	public static void main(String args[]) {
 		// Creating a Mongo client 
 	    MongoClient mongo = new MongoClient( "localhost" , 27017 ); 

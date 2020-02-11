@@ -24,6 +24,7 @@ public class StackImplementation<E> {
 		elements = Arrays.copyOf(elements, newSize);
 	}
 	
+	@SuppressWarnings("unchecked")
 	public E pop() {
 		E element =  (E) elements[--counter];
 		// If you do not do below step, stack will still hold this element unitl another push comes. 

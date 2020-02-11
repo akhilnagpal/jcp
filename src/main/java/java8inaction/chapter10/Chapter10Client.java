@@ -4,7 +4,8 @@ import java.util.Optional;
 
 public class Chapter10Client {
 
-  public static void main(String[] args) {
+  @SuppressWarnings("unused")
+public static void main(String[] args) {
     Optional<Car> nullCar = Optional.empty();
     Car car = new Car();
     Optional<Car> optCar = Optional.of(car);

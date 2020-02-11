@@ -38,7 +38,7 @@ public class BinaryNodeCheckerClient {
       binaryNodeChecker = new RecursionBinaryNodeChecker();
       System.out.println(binaryNodeChecker.checkValidBinaryTree(node));
       System.out.println(binaryNodeChecker.checkValidBinaryTree(inValidTree));
-      Thread.currentThread().sleep(1000);
+	Thread.sleep(1000);
     }
 
 

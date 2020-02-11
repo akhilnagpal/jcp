@@ -5,7 +5,8 @@ import java.util.Properties;
 
 public class PropertiesClient {
 
-  public static void main(String[] args) {
+  @SuppressWarnings("unused")
+public static void main(String[] args) {
     Properties prop = new Properties();
 
   }

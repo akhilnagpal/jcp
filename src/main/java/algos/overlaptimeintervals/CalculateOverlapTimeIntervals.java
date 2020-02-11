@@ -65,10 +65,7 @@ public class CalculateOverlapTimeIntervals
 
 
 	    int maxStart=0;
-	    int minEnd=0;
-	    
-	    final Interval first =  intervalList.get(0);
-	    
+	    int minEnd=0; 
 	    maxStart=0;
 	    minEnd=24;
 

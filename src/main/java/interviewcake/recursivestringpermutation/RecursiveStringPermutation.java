@@ -8,7 +8,8 @@ import java.util.Set;
 
 public class RecursiveStringPermutation {
 
-  public static void main(String args[]) {
+  @SuppressWarnings("unused")
+public static void main(String args[]) {
 
     Set<String> permutations = getPermutations("Akhil");
 

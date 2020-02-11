@@ -84,6 +84,7 @@ class LinkedListRemoveDuplicates
               }
               head=removeDuplicates(head);
               display(head);
+              sc.close();
 
        }
     }

@@ -22,6 +22,7 @@ public class WeakReferenceExample {
 		// In case of StrongMap (Usual HashMap), this null reference will still be held. memory leak
 		WeakReference <SingletonDoubleChecking> singletonDoubleCheckingWeakReference = new WeakReference<>(singletonDoubleCheckingStrongReference);
 		// below now will be weak reference of SingletonDoubleChecking
+		@SuppressWarnings("unused")
 		SingletonDoubleChecking weakReferenceSingletonDoubleChecking = singletonDoubleCheckingWeakReference.get();
 		
 		// Soft references are less eager to be collected by GC.
@@ -31,6 +32,7 @@ public class WeakReferenceExample {
 		// It is guaranteed that soft references are cleared before OOM isthrown
 		SoftReference <SingletonDoubleChecking> singletonDoubleCheckingSoftReference = new SoftReference<>(singletonDoubleCheckingStrongReference);
 		// below now will be soft reference of SingletonDoubleChecking
+		@SuppressWarnings("unused")
 		SingletonDoubleChecking softReferenceSingletonDoubleChecking = singletonDoubleCheckingSoftReference.get();
 		
 	}

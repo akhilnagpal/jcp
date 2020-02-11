@@ -31,7 +31,8 @@ public class Wallet {
 		Scanner in2 = new Scanner (reader);
 		
 		String nextLine = in2.nextLine();
-		
+		scanner.close();
+		in2.close();
 		StringTokenizer st = new StringTokenizer(nextLine,",");
 		while(st.hasMoreTokens()) {
 			String count = st.nextToken();
@@ -43,9 +44,11 @@ public class Wallet {
 			}
 			denominationCount++;
 			denominations.put(result, denominationCount);				
-		}		
+		}	
+
 		
 		return getBalanceFromDenominations();
+		
 	}
 	
 	public int spend(int spendMoney) throws NotEnoughtBalanceException {

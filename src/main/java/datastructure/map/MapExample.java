@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class MapExample<K,V> {
 	
 	int DEFAULT_CAPACITY = 10;
+	@SuppressWarnings("unchecked")
 	MyEntry<K,V>[] myEntryArray = new MyEntry[DEFAULT_CAPACITY];
 	public int size=0;
 
@@ -23,6 +24,7 @@ public class MapExample<K,V> {
         System.out.println(map.get("51"));
 	}
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	void put(K key,V value) {
 		
 		boolean newKey = true;

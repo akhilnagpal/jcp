@@ -19,6 +19,7 @@ public class MyListExample<E> {
 		objects[counter++] = element;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public E get(int index) {
 		if(index>counter-1) {
 			throw new RuntimeException("Index Out of Bound Exception");
