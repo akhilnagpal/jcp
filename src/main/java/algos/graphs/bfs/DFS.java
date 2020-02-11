@@ -14,7 +14,8 @@ public class DFS {
   private int numberOfVertices;
   private LinkedList<Integer>[] adjustancyList;
 
-  public DFS(int numberOfVertices) {
+  @SuppressWarnings("unchecked")
+public DFS(int numberOfVertices) {
     this.numberOfVertices = numberOfVertices;
     adjustancyList = new LinkedList[numberOfVertices];
     for (int i = 0; i < numberOfVertices; i++) {

@@ -14,7 +14,8 @@ public class BFS {
   private int numberOfVertices;
   private LinkedList<Integer>[] adjustancyList;
 
-  public BFS(int numberOfVertices) {
+  @SuppressWarnings("unchecked")
+public BFS(int numberOfVertices) {
     this.numberOfVertices = numberOfVertices;
     adjustancyList = new LinkedList[numberOfVertices];
     for (int i = 0; i < numberOfVertices; i++) {

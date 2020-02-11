@@ -4,13 +4,15 @@ import java.awt.Event;
 import java.util.EventListener;
 
 
+@SuppressWarnings("deprecation")
 public class SafeListener {
 
   private EventListener listener;
 
   private SafeListener() {
     listener = new EventListener() {
-      public void OnEvent(Event e) {
+      @SuppressWarnings("unused")
+	public void OnEvent(Event e) {
         doSomeThing(e);
       }
     };
