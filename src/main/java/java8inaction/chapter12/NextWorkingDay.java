@@ -9,7 +9,8 @@ import java.time.temporal.TemporalAdjuster;
 
 public class NextWorkingDay implements TemporalAdjuster {
 
-  @Override
+  @SuppressWarnings("unused")
+@Override
   public Temporal adjustInto(Temporal temporal) {
     Temporal nextWorkingDay;
     DayOfWeek dayOfweek = DayOfWeek.of(temporal.get(ChronoField.DAY_OF_WEEK));

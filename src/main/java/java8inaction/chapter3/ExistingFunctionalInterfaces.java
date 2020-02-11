@@ -15,7 +15,8 @@ public class ExistingFunctionalInterfaces {
 
   static Map<String, Function<Integer, Fruit>> mapOfFruitConstructors = new HashMap<>();
 
-  public static void main(String[] args) {
+  @SuppressWarnings("unused")
+public static void main(String[] args) {
     // USing IntPredicateFunction
     ToIntFunction<List<String>> intBiFunction = (list) -> list.size();
     System.out.println(intBiFunction.applyAsInt(new ArrayList<String>()));

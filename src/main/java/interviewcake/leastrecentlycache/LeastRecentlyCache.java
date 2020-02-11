@@ -23,7 +23,8 @@ public class LeastRecentlyCache {
       }
     } else {
       int i = 0;
-      int index = 0;
+      @SuppressWarnings("unused")
+	int index = 0;
       Iterator<Integer> iterator = queue.iterator();
       while (iterator.hasNext()) {
         int value = iterator.next();

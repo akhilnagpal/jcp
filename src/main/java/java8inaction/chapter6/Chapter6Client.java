@@ -1,7 +1,6 @@
 package java8inaction.chapter6;
 
 import static java.util.Comparator.comparingInt;
-import static java.util.stream.Collectors.averagingInt;
 import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
@@ -26,7 +25,8 @@ import java8inaction.chapter4.Dish;
 
 public class Chapter6Client {
 
-  public static void main(String[] args) {
+  @SuppressWarnings("unused")
+public static void main(String[] args) {
     List<Transaction> transactions = new ArrayList<>();
     transactions.add(new Transaction(Currency.getInstance("GBP"), 100));
     transactions.add(new Transaction(Currency.getInstance("GBP"), 200));

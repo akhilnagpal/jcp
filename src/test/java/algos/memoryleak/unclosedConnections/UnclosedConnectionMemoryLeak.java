@@ -22,7 +22,8 @@ import org.junit.Test;
 
 public class UnclosedConnectionMemoryLeak {
 
-  @Test(expected = OutOfMemoryError.class)
+  @SuppressWarnings("unused")
+@Test(expected = OutOfMemoryError.class)
   public void test() throws IOException {
     URL url = new URL("ftp://speedtest.tele2.net");
     URLConnection conn = url.openConnection();

@@ -9,7 +9,8 @@ import java.util.function.Supplier;
 public class Chapter11Client {
 
   public static void main(String[] args) throws InterruptedException, ExecutionException {
-    ExecutorService executor = Executors.newCachedThreadPool();
+    @SuppressWarnings("unused")
+	ExecutorService executor = Executors.newCachedThreadPool();
     // CompletableFuture<String> completeFuture = new CompletableFuture<>();
     // completeFuture.complete(Thread.currentThread().getName() + " HELLO AKHIL");
 
@@ -51,7 +52,8 @@ public class Chapter11Client {
     //
     // System.out.println(bmiFuture.get());
 
-    CompletableFuture<Double> bmiFuture =
+    @SuppressWarnings("unused")
+	CompletableFuture<Double> bmiFuture =
         CompletableFuture.supplyAsync(Chapter11Client::getWeight).thenCombine(
             CompletableFuture.supplyAsync(Chapter11Client::getHeight),
             (weight, height) -> weight / height);

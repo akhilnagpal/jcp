@@ -23,7 +23,8 @@ public class UnclosedStreamMemoryLeak {
    * why this also results in a memory leak.
    */
 
-  @Test(expected = OutOfMemoryError.class)
+  @SuppressWarnings("unused")
+@Test(expected = OutOfMemoryError.class)
   public void givenURL_whenUnclosedStream_thenOutOfMemory() throws IOException, URISyntaxException {
     String str = "";
     URLConnection conn = new URL("http://norvig.com/big.txt").openConnection();

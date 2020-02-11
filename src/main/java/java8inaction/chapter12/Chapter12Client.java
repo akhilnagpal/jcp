@@ -16,7 +16,8 @@ import java.util.Locale;
 
 public class Chapter12Client {
 
-  public static void main(String[] args) {
+  @SuppressWarnings("unused")
+public static void main(String[] args) {
     LocalDate localDate = LocalDate.of(1977, 7, 9);
     int dayofMonth = localDate.getDayOfMonth();
     System.out.println(dayofMonth);

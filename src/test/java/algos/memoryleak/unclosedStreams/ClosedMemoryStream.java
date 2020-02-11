@@ -10,7 +10,8 @@ import java.nio.charset.StandardCharsets;
 
 public class ClosedMemoryStream {
 
-  public ClosedMemoryStream() throws MalformedURLException, IOException {
+  @SuppressWarnings("unused")
+public ClosedMemoryStream() throws MalformedURLException, IOException {
     String str = "";
     URLConnection conn = new URL("http://norvig.com/big.txt").openConnection();
     // Added Stream inside the try (). The Implementing class needs to implement auto-implementable

@@ -10,7 +10,8 @@ import java.util.stream.Stream;
 
 public class PhytagorasTriplets {
 
-  public static void main(String[] args) throws IOException {
+  @SuppressWarnings("resource")
+public static void main(String[] args) throws IOException {
 
     // Stream<Object> i =
     Stream<int[]> pts =

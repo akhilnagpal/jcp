@@ -10,7 +10,8 @@ import java8inaction.chapter4.Dish;
 
 public class AllStreamOperations {
 
-  public static void main(String[] args) {
+  @SuppressWarnings("unused")
+public static void main(String[] args) {
     List<Dish> dishes = Dish.getDishes();
 
     // Get unique elements

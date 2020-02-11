@@ -12,6 +12,7 @@ import java.util.*;
 /* Name of the class has to be "Main" only if the class is public. */
 public class Graph
 {	private int vNumber;
+	@SuppressWarnings("rawtypes")
 	private ArrayList[] adj; 
 	
 	public Graph(int V){
@@ -21,6 +22,7 @@ public class Graph
 			adj[i] = new ArrayList<Integer>();
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void addEdge(int v, int w){
 		adj[v].add(w);
 	}
@@ -56,6 +58,7 @@ public class Graph
 		printPathsUtil(s,d,visited,path,path_index);
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void printPathsUtil(int s, int d, Boolean[] visited, int[] path, int path_index){
 			visited[s] = true;
 			path[path_index] = s;
