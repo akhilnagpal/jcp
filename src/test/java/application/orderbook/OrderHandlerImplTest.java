@@ -11,6 +11,9 @@ import java.util.concurrent.Future;
 import org.junit.Before;
 import org.junit.Test;
 
+import application.cmcmarkets.orderbook.OrderHandler;
+import application.cmcmarkets.orderbook.Side;
+
 public class OrderHandlerImplTest {
 
   OrderHandler orderHandler;
