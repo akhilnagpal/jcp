@@ -1,0 +1,7 @@
+1. I have used ConcurrentLinkedQueue as a data structure (Distributed Queue) to share the data between Randomizer and Prime Runnables (threads).
+2. ConcurrentLinkedQueue is synchronized and part of standard java concurrent collection
+3. Both Input Queue and Output Queue are of type ConcurrentLinkedQueue
+4. Input Queue hold positive random number integers up to 100 (for simplicity)
+5. Output Queue hold the type PrimeInteger which holds the original random number with its boolean stating whether it is prime or not.
+6. Randomizer thread generates random number and read it back from the output queue for the result
+7. Prime thread reads random number and assess its prime status using isPrime function and stores it back in the output queue

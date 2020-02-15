@@ -14,6 +14,15 @@ public class Book {
 		this.authors = authors;
 		this.price = price;
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", authors=" + authors + ", price=" + price + "]";
+	}
+
+
 
 	public Set<String> getAuthors() {
 		return authors;

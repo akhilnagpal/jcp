@@ -9,6 +9,7 @@ public class Client {
 	private String cd;
 	// Use Arraylist as it is faster than Vector
 	// You can always guard with ThreadSafety of records using synchronized
+	@SuppressWarnings("rawtypes")
 	private Vector records;
 	
 	public Client(String name, String licenseNumber, String cd) {
@@ -30,11 +31,13 @@ public class Client {
 		return cd;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public Vector getRecords() {
 		return records;
 	}
 	
 	//Correct the spelling of method, it should be intuitive
+	@SuppressWarnings("rawtypes")
 	public void addHirerecrd(HireRecord r) {
 		if(records == null) {
 			records = new Vector();
