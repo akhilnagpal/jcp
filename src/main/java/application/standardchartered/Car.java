@@ -1,10 +1,9 @@
 package application.standardchartered;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
-
-import org.joda.time.DateTime;
 
 
 // this is a simple domain object
@@ -22,7 +21,7 @@ public class Car {
 	public String reg;
 	public int category;
 	public boolean hired;
-	public Date hireEnd;
+	public LocalDate hireEnd;
 	private int age;
 	private long hireNumber;
 	
@@ -57,7 +56,7 @@ public class Car {
 	//* 1.  All business functions acting on Car should be off-loaded to class HireService
 	//  Car should have no business persisting to DB. Making things tightly coupled.
 	public void hire(DbService dbService, String cd, HireRecord record) throws SQLException {
-		hireEnd = new DateTime(record.getStartDate().getTime()).plusDays(record.getDays()).toDate();
+		hireEnd = record.getStartDate().plusDays(record.getDays());
 		hireNumber = record.getHireno();
 		// why below line
 		Calendar.getInstance();

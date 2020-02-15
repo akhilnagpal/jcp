@@ -1,6 +1,6 @@
 package application.standardchartered;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 
 // Should have a constructor to have validations in one go
@@ -8,7 +8,7 @@ import java.util.Date;
 public class HireRecord {
 	private Car car;
 	private String client;
-	private Date startDate;
+	private LocalDate startDate;
 	private int days;
 	private double rate;
 	private int state;
@@ -30,11 +30,15 @@ public class HireRecord {
 		this.client = client;
 	}
 
-	public Date getStartDate() {
+
+
+
+
+	public LocalDate getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
 

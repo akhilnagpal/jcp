@@ -1,7 +1,7 @@
 package application.standardchartered;
 
-import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 // Why no test cases has been written for any classes
 // Mock the DBService and make sure every method is unit tested
@@ -43,7 +43,7 @@ public class HireService {
 //		String str = "1986-04-08 12:30";
 //		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 //		LocalDateTime dateTime = LocalDateTime.parse(str, formatter);
-		hire.setStartDate(Date.valueOf(start));
+		hire.setStartDate(LocalDate.parse(start));
 		hire.setRate(rate); hire.setState(1);
 		hire.setHireno(hireNumber);
 		hire.setDays(days);	
