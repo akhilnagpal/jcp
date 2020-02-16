@@ -39,6 +39,7 @@ public class NewJavaTimeFunctionality {
 		years = birthday.datesUntil(LocalDate.now(), Period.ofYears(1));
 		years.map(localDate->Year.of(localDate.getYear())).filter(Year::isLeap).forEach(System.out::println);
 
+
 	}
 
 }
